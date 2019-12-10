@@ -5,3 +5,14 @@
 
 - Resultado da playlist de videos: https://www.youtube.com/playlist?list=PLHlHvK2lnJndvvycjBqQAbgEDqXxKLoqn 
 
+- rotas:
+/orders
+/produtos
+/customers
+
+Link para api no Heroku:
+https://apifael.herokuapp.com/
+Link para api no Azure:
+https://apifael.azurewebsites.net/
+
+
