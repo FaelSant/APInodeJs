@@ -7,9 +7,9 @@ const auth = require('./services/auth-services')
 // Conectando ao banco de dados
 moongoose.connect(config.connectionString,{ useUnifiedTopology: true, useNewUrlParser: true })
 // Carregando Models
-const custumerModel = require('./models/Schemacustomer')
-const produtoModel = require('./models/Schemaproduto')
-const orderModel = require('./models/Schemaorder')
+const custumerModel = require('./models/schema-customer')
+const produtoModel = require('./models/schema-produto')
+const orderModel = require('./models/schema-order')
 //carregando rotas
 const index = require('./routes/index');
 const produtos = require('./routes/produtos')
