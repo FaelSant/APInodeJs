@@ -16,5 +16,5 @@ Link para api no Azure:
 https://apifael.azurewebsites.net/
 
 
-Certificado:  https://www.dropbox.com/s/hhuldke234je00d/ApiNodeJSbalta.io%20_%20Certificado%20de%20Conclus%C3%A3o.pdf?dl=0
+
 
