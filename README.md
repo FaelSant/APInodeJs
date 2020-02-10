@@ -12,8 +12,7 @@
 
 Link para api no Heroku:
 https://apifael.herokuapp.com/
-Link para api no Azure:
-https://apifael.azurewebsites.net/
+
 
 
 
