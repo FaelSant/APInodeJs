@@ -49,12 +49,12 @@ exports.getByTags = async(req,res,next) => {
 //metodo para lançar os produtos passando os parametros por req.body
 exports.posts = async(req,res,next) => {
     //Criando blob Service
-     const blobServ = azure.createBlobService(config.containerConnectionString)
-     let filename = guid.raw().substring(0,6).toString()+ '.png';
-     let rawData = req.body.image;
-     let matches = rawData.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
-     let type = matches[1];
-     let buffer = new Buffer(matches[2],'base64');
+    // const blobServ = azure.createBlobService(config.containerConnectionString)
+   //  let filename = guid.raw().substring(0,6).toString()+ '.png';
+   //  let rawData = req.body.image;
+    // let matches = rawData.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
+   // let type = matches[1];
+    // let buffer = new Buffer(matches[2],'base64');
      //Salva imagem
     try{
         await repository.posts({
@@ -64,19 +64,17 @@ exports.posts = async(req,res,next) => {
             price: req.body.price,
             active:true,
             tags:req.body.tags,
-            image: 'https://nodestr1.blob.core.windows.net/product-image/' + filename
+           // image: 'https://nodestr1.blob.core.windows.net/product-image/' + filename
         })
-        res.status(201).send({
-            message:'Produto cadastrado'});
+        res.status(201).send({message:'Produto cadastrado'});
 
-
-             await blobServ.createAppendBlobFromText('product-image',filename,buffer,{
+         /*    await blobServ.createAppendBlobFromText('product-image',filename,buffer,{
                  contentType: type
              },(error,result,response)=>{
                  if(error){
                      filename = 'default-product.png'
                  }
-             })
+             })*/
     }catch(e){
         console.log(e);
         res.status(500).send({

@@ -5,7 +5,7 @@ const router = express.Router();
 const produtoController = require('../controllers/produto-controller')
 const authService = require('../services/auth-services');
 //criando produto
-const create = router.post('/',authService.isAdmin, produtoController.posts);
+const create = router.post('/',produtoController.posts);
 //atualizar um produto
 const put = router.put('/:id',authService.isAdmin,produtoController.put);
 //deletar um produto
