@@ -59,7 +59,7 @@ exports.posts = async(req,res,next) => {
     try{
         await repository.posts({
             title:req.body.title,
-            slug:req.body.slug,
+            //slug:req.body.slug,
             description: req.body.description,
             price: req.body.price,
             active:true,
