@@ -1,14 +1,19 @@
-'use strict'
-const mongoose = require('mongoose');
-const Order = mongoose.model('Order');
+"use strict"
+import mongoose from "mongoose"
+import OrderSchema from "../models/schema-order"
+const Order = mongoose.model("Order", OrderSchema)
 
-exports.get = async(data) =>{
-    let res = await Order.find({},'number status items customer')
-    .populate('customer','name')
-    .populate('items.Produto ','title');
+const OrderRepository = {
+  async get() {
+    let res = await Order.find({}, "number status items customer")
+      .populate("customer", "name")
+      .populate("items.Produto ", "title")
     return res
-}
-exports.posts = async(data) =>{
-    let order = new Order(data);
+  },
+  async posts(data) {
+    let order = new Order(data)
     await order.save()
+  }
 }
+
+export default OrderRepository

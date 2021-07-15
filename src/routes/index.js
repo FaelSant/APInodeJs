@@ -1,13 +1,11 @@
-const express = require('express')
-const router =  express.Router();
+import express from "express"
+const router = express.Router()
 
+router.get("/", (req, res, next) => {
+  res.status(200).send({
+    title: "API DE TESTE do Fael",
+    version: "1.0.0",
+  })
+})
 
-router.get('/', (req,res,next) => {
-    res.status(200).send({
-        title:"API DE TESTE do Fael",
-        version:"1.0.0"
-    });
-});
-
-
-module.exports = router;
+export default router

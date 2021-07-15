@@ -1,15 +1,13 @@
-'use strict'
+import express from "express"
+import { CustomerController } from "../controllers/customer-controller"
+import { authorize } from "../services/auth-services"
 
-const express = require('express')
-const router = express.Router();
-const customerController = require('../controllers/customer-controller')
-const authService = require('../services/auth-services')
+const router = express.Router()
 
+router.post("/", CustomerController.posts)
+router.delete("/:id", CustomerController.remove)
+router.get("/", CustomerController.get)
+router.post("/authenticate", CustomerController.authenticate)
+router.post("/refresh-token", authorize, CustomerController.refreshToken)
 
-const create = router.post('/',customerController.posts);
-const deletar = router.delete('/:id',customerController.delete);
-const get = router.get('/',customerController.get);
-const autheticate = router.post('/authenticate',customerController.authenticate)
-router.post('/refresh-token',authService.authorize, customerController.refreshToken)
-
-module.exports = router;
+export default router
